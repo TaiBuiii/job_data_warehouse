@@ -8,22 +8,18 @@ def setup_logger(name: str):
     :return: logger object
     """
     log_dir = "logs"
-    os.makedirs(log_dir, exist_ok=True)  # tạo folder logs nếu chưa có
+    os.makedirs(log_dir, exist_ok=True)  
 
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
-    # tránh duplicate handler khi import logger nhiều lần
     if not logger.handlers:
-        # Ghi ra file
         file_handler = logging.FileHandler(f"{log_dir}/{name}.log", encoding="utf-8")
         file_handler.setLevel(logging.INFO)
 
-        # In ra console
         console_handler = logging.StreamHandler()
         console_handler.setLevel(logging.INFO)
 
-        # Format log
         formatter = logging.Formatter(
             "%(asctime)s | %(name)s | %(levelname)s | %(message)s",
             "%Y-%m-%d %H:%M:%S"
@@ -31,8 +27,8 @@ def setup_logger(name: str):
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
 
-        # Add handler
         logger.addHandler(file_handler)
         logger.addHandler(console_handler)
 
     return logger
+
