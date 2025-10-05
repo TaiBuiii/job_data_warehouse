@@ -29,26 +29,35 @@ The purpose is to analyze job trends — including the most demanded **skills**,
 2. **Folder structure**
 ```bash
 ├── config/
-│   └── airflow.cfg                     # Airflow config file
-├── logs/                               # Task logs
-├── plugins/                            # Airflow plugins (if any)
+│     └── airflow.cfg
+├── logs/
+├── plugins/
 ├── dags/
-│   ├── ELT.py                          # Main DAG pipeline
-│   ├── logger.py                       # Logging setup
-│   ├── mapping.py                      # Helper mapping script
-│   ├── extract/
-│   │   └── extract.py                  # Crawl job data from TopCV
-│   ├── transform/
-│   │   └── transform.py                # Data cleaning and standardization
-│   └── load/
-│       ├── load_bronze.py              # Load raw data into bronze schema
-│       ├── load_silver.py              # Process and load silver data
-│       └── load_gold.py                # Build final fact & dimension tables
+│     ├── ELT.py
+│     ├── logger.py
+│     ├── mapping.py
+│     ├── extract/
+│     │   └── extract.py
+│     ├── transform/
+│     │   └── transform.py
+│     └── load/
+│         ├── load_bronze.py         
+│         ├── load_silver.py        
+│         └── load_gold.py           
 ├── sql/
-│   ├── init_database.sql               # Initialize DB schemas and tables
-│   ├── dim_*.sql                       # Dimension tables (location, skill, etc.)
-│   ├── fact_*.sql                      # Fact tables
-│   └── bridge_*.sql                    # Bridge (many-to-many) tables
-├── docker-compose.yaml                 # Docker environment setup
-├── .env                                # Environment variables (Postgres, Airflow)
+│     ├── init_database.sql
+│     ├── dim_company.sql        
+│     ├── fact_recruitment.sql
+│     ├── dim_location.sql
+│     ├── dim_skill.sql
+│     ├── dim_programming_language.sql 
+│     ├── dim_job.sql
+│     ├── dim_position.sql
+│     ├── dim_education.sql
+│     ├── bridge_job_location.sql
+│     ├── bridge_job_programming_language.sql
+│     └── bridge_job_skill.sql
+├── docker-compose.yaml
+├── .env                       
 └── README.md
+```
