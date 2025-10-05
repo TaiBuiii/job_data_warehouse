@@ -26,7 +26,9 @@ The purpose is to analyze job trends — including the most demanded **skills**,
    docker compose up airflow-init
    docker compose up -d
 ```
-2. **Folder structure**
+2 **Initalize dataschema**
+   - Executing the file init_database.sql
+3. **Folder structure**
 ```bash
 ├── config/
 │     └── airflow.cfg
@@ -34,6 +36,7 @@ The purpose is to analyze job trends — including the most demanded **skills**,
 ├── plugins/
 ├── dags/
 │     ├── ELT.py
+|     ├── init_database.sql  #initialize dataschema
 │     ├── logger.py
 │     ├── mapping.py
 │     ├── extract/
@@ -45,7 +48,6 @@ The purpose is to analyze job trends — including the most demanded **skills**,
 │         ├── load_silver.py        
 │         └── load_gold.py           
 ├── sql/
-│     ├── init_database.sql
 │     ├── dim_company.sql        
 │     ├── fact_recruitment.sql
 │     ├── dim_location.sql
