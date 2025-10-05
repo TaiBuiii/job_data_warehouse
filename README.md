@@ -27,7 +27,7 @@ The purpose is to analyze job trends — including the most demanded **skills**,
    docker compose up -d
 ```
 2 **Initalize dataschema**
-   - Executing the file init_database.sql
+Executing the file init_database.sql
 3. **Folder structure**
 ```bash
 ├── config/
