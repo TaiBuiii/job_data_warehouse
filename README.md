@@ -25,6 +25,9 @@ The purpose is to analyze job trends — including the most demanded **skills**,
 ```bash
    docker compose up airflow-init
    docker compose up -d
+```
+2. **Folder structure**
+```bash
 ├── config/
 │   └── airflow.cfg                     # Airflow config file
 ├── logs/                               # Task logs
